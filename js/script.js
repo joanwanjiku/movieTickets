@@ -9,7 +9,6 @@ $(document).ready(function(){
         var age = parseInt($('#age').val());
         var movieAttribute = document.getElementById('movie').value;
         alert(typeof movieAttribute);
-
     });
 });
 // business logic
@@ -19,26 +18,26 @@ function Ticket(movie, time, age){
     this.personAge = age;
 }
 
-price = 600;
+var price = 600;
 
-var ageLogic = function() {
+var ageLogic = function(age) {
   if (age < 10) {
     console.log("person not allowed into theatre");
-  } elseif (age >= 10 && age <= 23) {
+  } else if (age >= 10 && age <= 23) {
     return price - (price * 0.15);
-  } elseif (age > 50) {
-    return price - (price * 0.1)
+  } else if (age > 50) {
+    return price - (price * 0.1);
   } else {
     return price
   };
 };
 
-var timeLogic = function() {
+var timeLogic = function(time) {
   if (time === '9am-12Noon') {
     return price - (price * 0.15)
-  } elseif (time === '1pm-3pm'){
+  } else if (time === '1pm-3pm'){
     return price - (price * 0.1);
-  } elseif (time === '3pm-6pm') {
+  } else if (time === '3pm-6pm') {
     return price - (price * 0.05)
   } else {
     return price

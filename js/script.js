@@ -4,11 +4,12 @@ $(document).ready(function(){
     $('form').submit(function(e){
         e.preventDefault();
         // alert("button clicked")
-        var movie = $('#movie').val();
+        var movie
+        var movie = document.getElementById("movie").selectedIndex;
         var time = $('#time').val();
         var age = parseInt($('#age').val());
-        var movieAttribute = document.getElementById('movie').value;
-        alert(typeof movieAttribute);
+        var movieAttr = document.getElementsByTagName("option")[movie].value;
+        alert(`${movie} ${movieAttr}`);
     });
 });
 // business logic
